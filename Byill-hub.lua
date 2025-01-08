@@ -250,9 +250,9 @@ SecondTab:CreateButton({
 
 -- 세 번째 탭 추가
 
-local ThirdTab = Window:CreateTab("속도 및 점프 설정", nil)
+local ThirdTab = Window:CreateTab("플레이어", nil)
 
-local ThirdSection = ThirdTab:CreateSection("속도 및 점프 조정")
+local ThirdSection = ThirdTab:CreateSection("속도 및 점프")
 
 
 
@@ -268,9 +268,9 @@ local inputJumpPower = 50 -- 기본 JumpPower
 
 ThirdTab:CreateInput({
 
-    Name = "속도 입력",
+    Name = "WalkSpeed",
 
-    PlaceholderText = "예: 50",
+    PlaceholderText = "input",
 
     RemoveTextAfterFocusLost = false,
 
@@ -278,15 +278,15 @@ ThirdTab:CreateInput({
 
         local number = tonumber(Text) -- 입력 값을 숫자로 변환
 
-        if number and number >= 16 and number <= 100 then
+        if number and number >= 1 and number <= 300 then
 
             inputSpeed = number
 
-            print("입력된 속도: " .. inputSpeed)
+            print("속도 설정 : " .. inputSpeed)
 
         else
 
-            print("유효하지 않은 속도입니다. (16~100 사이로 입력하세요)")
+            print("유효하지 않은 속도입니다. (1~300 사이로 입력하세요)")
 
         end
 
@@ -300,7 +300,7 @@ ThirdTab:CreateInput({
 
 ThirdTab:CreateButton({
 
-    Name = "속도 설정 실행",
+    Name = "WalkSpeed Execute",
 
     Callback = function()
 
@@ -328,9 +328,9 @@ ThirdTab:CreateButton({
 
 ThirdTab:CreateInput({
 
-    Name = "점프력 입력",
+    Name = "JumpPower",
 
-    PlaceholderText = "예: 100",
+    PlaceholderText = "Input",
 
     RemoveTextAfterFocusLost = false,
 
@@ -338,15 +338,15 @@ ThirdTab:CreateInput({
 
         local number = tonumber(Text) -- 입력 값을 숫자로 변환
 
-        if number and number >= 50 and number <= 200 then
+        if number and number >= 1 and number <= 500 then
 
             inputJumpPower = number
 
-            print("입력된 점프력: " .. inputJumpPower)
+            print("점프력 설정 : " .. inputJumpPower)
 
         else
 
-            print("유효하지 않은 점프력입니다. (50~200 사이로 입력하세요)")
+            print("유효하지 않은 점프력입니다. (1~500 사이로 입력하세요)")
 
         end
 
@@ -360,7 +360,7 @@ ThirdTab:CreateInput({
 
 ThirdTab:CreateButton({
 
-    Name = "점프력 설정 실행",
+    Name = "JumpPower Execute",
 
     Callback = function()
 
