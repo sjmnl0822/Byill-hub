@@ -198,6 +198,22 @@ local SecondSection = SecondTab:CreateSection("주로 사용하는 것")
 
 SecondTab:CreateButton({
 
+   Name = "Players Settings",
+
+   Callback = function()
+
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/QP-Community/Roblox-Exploit/main/Sirius"))()
+
+       print("Player Setting Activated!")
+
+   end,
+
+})
+
+
+
+SecondTab:CreateButton({
+
    Name = "Inf Jump",
 
    Callback = function()
@@ -225,38 +241,6 @@ SecondTab:CreateButton({
        loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/ignore-touchinterests/main/main", true))()
 
        print("God Mode Activated!")
-
-   end,
-
-})
-
-
-
-SecondTab:CreateButton({
-
-   Name = "NoClip",
-
-   Callback = function()
-
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/MaksBloxX/NoClipScript/main/NoClip%20Roblox", true))()
-
-       print("NoClip Activated!")
-
-   end,
-
-})
-
-
-
-SecondTab:CreateButton({
-
-   Name = "Players Settings",
-
-   Callback = function()
-
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/QP-Community/Roblox-Exploit/main/Sirius"))()
-
-       print("Player Setting Activated!")
 
    end,
 
