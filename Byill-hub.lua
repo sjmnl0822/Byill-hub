@@ -248,15 +248,7 @@ SecondTab:CreateButton({
 
 
 
--- 세 번째 탭 추가
-
-local ThirdTab = Window:CreateTab("플레이어", nil)
-
-local ThirdSection = ThirdTab:CreateSection("속도 및 점프")
-
-
-
-ThirdTab:CreateButton({
+SecondTab:CreateButton({
 
    Name = "Players Settings",
 
@@ -264,7 +256,7 @@ ThirdTab:CreateButton({
 
        loadstring(game:HttpGet("https://raw.githubusercontent.com/QP-Community/Roblox-Exploit/main/Sirius"))()
 
-       print("Player Activated!")
+       print("Player Setting Activated!")
 
    end,
 
